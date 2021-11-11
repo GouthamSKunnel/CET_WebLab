@@ -1,76 +1,60 @@
-<html>
-<head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Links</title>
-</head><body><br>
-<br>
+<style>
+h2{text-align: center;}
+</style>
+</head>
+<body>
 <h2>content</h2>
-<p>
-A web server is computer software and underlying hardware that accepts requests via HTTP, the network protocol created to distribute web content, or its secure variant HTTPS. A user agent, commonly a web browser or web crawler, initiates communication by making a request for a specific resource using HTTP, and the web server responds with the content of that resource or an error message. The web server can also accept and store resources sent from the user agent if configured to do so.[1] [2]
-
-A web server can be a single computer, or even an embedded system such as a router with a built-in configuration interface, but high-traffic websites typically run web servers on fleets of computers designed to handle large numbers of requests for documents, multimedia files and interactive scripts.
-
-A resource sent from a web server can be a preexisting file (static content) available to the web server, or it can be generated at the time of the request (dynamic content) by another program that communicates with the web server program. The former usually can be served faster and can be more easily cached for repeated requests, while the latter supports a broader range of applications.
-
-Technologies such as REST and SOAP, which use HTTP as a basis for general computer-to-computer communication, have extended the application of web servers well beyond their original purpose of serving human-readable pages. </P>
-<a href="#history">History</a> 
+<a href="#clientserver">Client/Server concepts</a> 
 <br>
-<a href="#tc">Technical overview</a> 
+<a href="#components"> Components of Web Application</a> 
 <br>
-<a href="#kernel">Kernel-mode and user-mode web servers</a>
+<a href="#http"> Overview of HTTP</a>
+<br>
+<img src="500px-Client-server-model.png" alt="clientserver" width="250" height="150" style="float:right"> 
+<h4>Client/Server concepts</h4>
 
+<p id="clientserver">Client–server model is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients.[1] Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. A server host runs one or more server programs, which share their resources with clients. A client usually does not share any of its resources, but it requests content or service from a server. Clients, therefore, initiate communication sessions with servers, which await incoming requests. Examples of computer applications that use the client–server model are email, network printing, and the World Wide Web </p><p>
 
+The "client-server" characteristic describes the relationship of cooperating programs in an application. The server component provides a function or service to one or many clients, which initiate requests for such services. Servers are classified by the services they provide. For example, a web server serves web pages and a file server serves computer files. A shared resource may be any of the server computer's software and electronic components, from programs and data to processors and storage devices. The sharing of resources of a server constitutes a service.
 
+Whether a computer is a client, a server, or both, is determined by the nature of the application that requires the service functions. For example, a single computer can run web server and file server software at the same time to serve different data to clients making different kinds of requests. Client software can also communicate with server software within the same computer.[2] Communication between servers, such as to synchronize data, is sometimes called inter-server or server-to-server communication. 
 
-<h4>History</h4>
-<p id="history">
-In March 1989 Sir Tim Berners-Lee proposed a new project to his employer CERN, with the goal of easing the exchange of information between scientists by using a hypertext system.[3][4] The project resulted in Berners-Lee writing two programs in 1990:
-    <ul><li>a Web browser called WorldWideWeb;</li>
-    <li>the world's first Web server, later known as CERN httpd, which ran on NeXTSTEP.</li>
-    </ul>
-
-Between 1991 and 1995, the simplicity and effectiveness of early technologies used to surf and exchange data through the World Wide Web helped to port them to many different operating systems and spread their use among scientific organizations and universities, and subsequently to the industry.
-
-In those early years new implementations of both web browsers and web servers (i.e. NCSA HTTPd, etc.) were developed by various organizations, including private ones, thus starting a keen competition that since then has grown exponentially (see also Market share of web server software).
-
-In 1994 Berners-Lee decided to constitute the World Wide Web Consortium (W3C) to regulate the further development of the many technologies involved (HTTP, HTML, etc.) through a standardization process. 
 </p>
 <br>
-<h4>Technical Overview</h4>
-<p id="tc">
-</p><ul>
-A web server program, when it is running, usually performs several tasks, (i.e.):[1]
+<h4> Components of Web Application</h4>
+<img src="web-application-architecture-02.png" alt="clientserver" width="350" height="250" style="float:right">
+
+<p id="components">
+All web-based database applications have three primary components: A web browser (or client), a web application server, and a database server.</p>
+
+<p>Web-based database applications rely on a database server, which provides the data for the application. The database server sometimes also provides business logic in the form of stored procedures. Stored procedures can offer significant performance advantages, especially in a multi-tiered architecture. In addition to database servers, other enterprise information system components include IMS databases, IBM® MQ messages, and CICS® records.</p>
+
+<p>The clients handle the presentation logic, which controls the way in which users interact with the application. In some cases, the client validates user-provided input. Web applications sometimes integrate Java™ applets into the client-side logic to improve the presentation layer.</p>
+
+<h5>Applet</h5>
+  <p>  A Java program that is part of a Hypertext Markup Language (HTML) page. (HTML is the standard method for presenting web data to users.) Applets work with Java-enabled browsers, such as Microsoft Internet Explorer; they are loaded when the HTML page is processed.</p>
+
+<p>Web application servers manage the business logic. The business logic, typically written in Java, supports multitiered applications. The web application server can manage requests from a variety of remote clients. The web application layer might include JavaServer Pages (JSP) files, Java servlets, Enterprise JavaBeans (EJB) components, or web services.</p>
+
+<h5>JSP</h5>
+   <p> A technology that provides a consistent way to extend web server functionality and create dynamic web content. The web applications that you develop with JSP technology are server and platform independent.</p>
+<h5>Servlet</h5>
+   <p> A Java program that responds to client requests and generates responses dynamically.</p>
+<h5>EJB</h5>
+   <p> A component architecture for building distributed applications with the Java programming model. Server transactional components are reusable and provide portability across application servers.</p>
+<h5>Web services</h5>
+    <p>Self-contained, modular applications that provide an interface between the provider and the consumer of application resources. You can read more about web services later in this information.</p>
 <br>
-   <li> starts, optionally reads and applies settings found in its configuration file(s) or elsewhere, etc.;</li>
-    <li>manages client connection(s) (accepting new ones or closing the existing ones depending on operating conditions);</li>
-   <li> receives client requests (by reading HTTP messages);</li>
-   <li> replies to client requests sending proper HTTP responses (i.e. requested resources or error messages);</li>
-   <li> optionally logs client requests and/or error responses;</li>
-   <li> optionally tries to adapt its behavior depending on its current load conditions (number of client connections, number of client requests, etc.);</li>
-   <li> optionally it is able to start and eventually to stop the execution of external programs used to generate dynamic content;</li>
-   <li> optionally manages the communications with external programs used to generate dynamic content;</li>
-   <li> optionally generates statistics about web traffic managed and/or its performances;</li>
-  
-Web server program complexity and efficiency may vary a lot depending on (i.e.):[1]
+<h4> Overview of HTTP</h4>
+<p id="http">
 
-   <li> common features implemented;</li>
-  <li>  performances and scalability level aimed as a goal;</li>
-   <li> software model and techniques adopted to reach wished performances and scalability level;</li>
-   <li> target HW and category of usage, i.e. embedded system, low-medium traffic web server, high traffic Internet web server, etc.;</li>
-</ul>
-<p></p>
-<br>
-<h4>Kernel-mode and user-mode web servers</h4>
-<p id="kernel">
-
-A web server software can be either incorporated into the OS and executed in kernel space, or it can be executed in user space (like other regular applications).
-
-Web servers that run in kernel mode (usually called kernel space web servers) can have direct access to kernel resources and so they can be, in theory, faster than those running in user mode; anyway there are disadvantages in running a web server in kernel mode, e.g.: difficulties in developing (debugging) software whereas run-time critical errors may lead to serious problems in OS kernel.
-
-Web servers that run in user-mode have to ask the system for permission to use more memory or more CPU resources. Not only do these requests to the kernel take time, but they are not always satisfied because the system reserves resources for its own usage and has the responsibility to share hardware resources with all the other running applications. Executing in user mode can also mean useless buffer copies which are another limitation for user-mode web servers.
-
-Nowadays almost all web server software is executed in user mode (because many of above small disadvantages have been overcome by faster hardware, new OS versions, much faster OS system calls and new web server software). See also comparison of web server software to discover which of them run in kernel mode or in user mode (also referred as kernel space or user space). </p>
+<p>The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative, hypermedia information systems. This is the foundation for data communication for the World Wide Web (i.e. internet) since 1990. HTTP is a generic and stateless protocol which can be used for other purposes as well using extensions of its request methods, error codes, and headers.</p>
+<img src="cgiarch.gif" alt="clientserver" width="550" height="450" style="vertical-align:middle">
 
 
-
-
-</body></html>
+<p>Basically, HTTP is a TCP/IP based communication protocol, that is used to deliver data (HTML files, image files, query results, etc.) on the World Wide Web. The default port is TCP 80, but other ports can be used as well. It provides a standardized way for computers to communicate with each other. HTTP specification specifies how clients' request data will be constructed and sent to the server, and how the servers respond to these requests.</p>
+</body>
+</html>
